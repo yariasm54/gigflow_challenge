@@ -81,9 +81,24 @@ docker-compose exec web bash
 ![hunty-logo](/media/ER.png)
 
 ### Seeder
-Puede alimentar su base de datos con datos de prueba desde la línea de comando usando el comando:
+- Puede alimentar su base de datos con datos de prueba desde la línea de comando usando el comando:
 ```console
 python manage.py seed --seeds 50
 ```
-*El comando anterior poblará el modelo service_type con la cantidad solicitada(50 registros por defecto), el modelo package con 3 paquetes para cada tipo de servicio y el modelo deliverable con 3 entregables para cada paquete.
+<sup>El comando anterior poblará el modelo service_type con la cantidad solicitada(50 registros por defecto), el modelo package con 3 paquetes para cada tipo de servicio y el modelo deliverable con 3 entregables para cada paquete.</sup>
+
+### Documentación de los endpoints con Postman
+<sup>Importante: Se utilizó la version v2.1 para exportar la colección desde el software postman.</sup>
+- En la carpeta `/collections/service` encontrará la colección de Postman para llevar a cabo pruebas a los Endpoints del proyecto.
+- Por favor, previamente debe configurar un entorno dentro del software Postman para configurar las variables requeridas para su correcto funcionamiento.
+  - Para crear el entorno puede llevar a cabo los siguientes pasos:
+  
+![hunty-logo](/media/Postman_1.png)
+
+  1. Diríjase a la pestaña `Enviroments`.
+  2. Agregue un nuevo entorno seleccionando el signo más `+` y defina un nombre de su preferencia.
+  3. Agregue una nueva variable llamada `DOMAIN`, para esta nueva variable defina el valor de `INITIAL VALUE` en `http://localhost:8000`.
+  4. Ya puede seleccionar el nuevo entorno como el entorno por defecto dentro de postman.
+
+
 

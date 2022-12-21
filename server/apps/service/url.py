@@ -11,5 +11,5 @@ router = SimpleRouter()
 router.register(r"", ServiceTypeViewSet, basename="service")
 
 urlpatterns = [
-    path("service/", include(router.urls)),
+    path("services/", include(router.urls)),
 ]
