@@ -76,3 +76,7 @@ python manage.py migrate
 ```console
 docker-compose exec web bash
 ```
+
+#### Diagrama entidad relación resultado
+![hunty-logo](/media/ER.png)
+
