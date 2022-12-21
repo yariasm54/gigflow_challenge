@@ -23,6 +23,7 @@ class Deliverable(models.Model):
         verbose_name="Package",
         on_delete=models.PROTECT,
         help_text="Package",
+        related_name='deliverables',
     )
 
     class Meta:

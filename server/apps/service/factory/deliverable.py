@@ -13,5 +13,5 @@ class DeliverableFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Deliverable
 
-    name = factory.Faker("sentence", nb_words=10)
+    name = factory.Faker("sentence", nb_words=3)
     package = factory.Iterator(Package.objects.all())

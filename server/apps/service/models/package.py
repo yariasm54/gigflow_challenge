@@ -31,6 +31,7 @@ class Package(models.Model):
         verbose_name="Service type",
         on_delete=models.PROTECT,
         help_text="Package service type",
+        related_name='packages',
     )
 
     class Meta:
