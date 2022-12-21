@@ -80,3 +80,10 @@ docker-compose exec web bash
 #### Diagrama entidad relación resultado
 ![hunty-logo](/media/ER.png)
 
+### Seeder
+Puede alimentar su base de datos con datos de prueba desde la línea de comando usando el comando:
+```console
+python manage.py seed --seeds 50
+```
+*El comando anterior poblará el modelo service_type con la cantidad solicitada(50 registros por defecto), el modelo package con 3 paquetes para cada tipo de servicio y el modelo deliverable con 3 entregables para cada paquete.
+
