@@ -55,7 +55,7 @@ Windows
 docker compose up --build
 ```
 
-## Documentation
+## Documentación
 
 ### Crear y configurar archivo de entorno
 
@@ -74,5 +74,5 @@ python manage.py migrate
 ```
 #### Si está utilizando `docker`, previamente debe ingresar al contenedor con el siguiente comando:
 ```console
-python manage.py migrate
+docker-compose exec web bash
 ```
