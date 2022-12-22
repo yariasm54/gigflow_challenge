@@ -23,7 +23,6 @@ class ServiceTestCase(APITestCase):
         APITestCase: Test case class included in the REST framework.
     """
     url = '/api/v1/'
-    service_list = []
 
     def test_list_services(self):
         """

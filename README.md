@@ -17,13 +17,15 @@ Seleccione un método de ejecución:
   - `Docker >=  20.10.21`
   - `Docker Compose >=  2.13.0`
 
-## Entorno de desarrollo
+## Entorno de desarrollo local
 
-- Crear un entorno virtual
+##### Crear un entorno virtual
+- Instalar virtualenv
 ```console
-# Instalar virtualenv
 python -m pip install virtualenv
-# Crear entorno virtual
+```
+- Crear entorno virtual
+```console
 virtualenv venv
 ```
 
@@ -40,6 +42,15 @@ Windows - powershell
 ```
 [Otros activadores](https://virtualenv.pypa.io/en/latest/user_guide.html#activators)
 
+- Instalar paquetes requeridos  
+```console
+pip install -r requirements.txt
+```
+
+- Iniciar el servidor Django
+```console
+python manage.py runserver 0.0.0.0:8080
+```
 
 ### Docker
 
@@ -59,7 +70,7 @@ docker compose up --build
 
 ### Crear y configurar archivo de entorno
 
-#### Por favor creé un nuevo archivo en la raíz del proyecto llamado .env, luego pegue la configuración por defecto que se encuentra en el archivo .env.template y cambie las variables de entorno según sus necesidades.
+#### Por favor creé un nuevo archivo en la raíz del proyecto llamado `.env`, luego pegue la configuración por defecto que se encuentra en el archivo `.env.template` y cambie las variables de entorno según sus necesidades.
 
 Puede utilizar el siguiente comando para Linux
 ```console
@@ -68,13 +79,14 @@ sudo cp .env.template .env
 
 ### Migración de base de datos
 
+#### Si está utilizando `docker`, debe ingresar al contenedor con el siguiente comando:
+```console
+docker-compose exec web bash
+```
+
 #### Utilice el siguiente comando para realizar la migración de la base de datos:
 ```console
 python manage.py migrate
-```
-#### Si está utilizando `docker`, previamente debe ingresar al contenedor con el siguiente comando:
-```console
-docker-compose exec web bash
 ```
 
 #### Diagrama entidad relación resultado
@@ -100,5 +112,8 @@ python manage.py seed --seeds 50
   3. Agregue una nueva variable llamada `DOMAIN`, para esta nueva variable defina el valor de `INITIAL VALUE` en `http://localhost:8000`.
   4. Ya puede seleccionar el nuevo entorno como el entorno por defecto dentro de postman.
 
+### Pruebas unitarias
+- En la carpeta `/test` puede encontrar las pruebas unitarias empleadas para probar los endpoints principales de Service.
+- La cobertura final de las pruebas es del 97%.
 
-
+![hunty-logo](/media/Test.png)
